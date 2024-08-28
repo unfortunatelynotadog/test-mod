@@ -330,6 +330,13 @@
 			"name": "Toggle #1 to Enable",
 			"enable-if": "test-enable-if"
 		},
+		"test-should-be-enabled-desc": {
+			"type": "bool",
+			"default": true,
+			"name": "Toggle #1 to Enable (Desc.)",
+			"enable-if": "test-enable-if",
+			"enable-if-description": "Please Enable the First Toggler!"
+		},
 		"test-should-be-enabled-explicit": {
 			"type": "bool",
 			"default": true,
@@ -357,12 +364,24 @@
 		"test-should-be-enabled-int": {
 			"type": "int",
 			"default": 0,
-			"enable-if": "test-enable-if"
+			"enable-if": "test-enable-if",
+			"min": -5,
+			"max": 5,
+			"control": {
+				"big-arrows": true,
+				"slider": true
+			}
 		},
 		"test-should-be-enabled-float": {
 			"type": "float",
 			"default": 0,
-			"enable-if": "test-enable-if"
+			"enable-if": "test-enable-if",
+			"min": -5,
+			"max": 5,
+			"control": {
+				"big-arrows": true,
+				"slider": true
+			}
 		},
 		"test-should-be-enabled-string": {
 			"type": "string",
