@@ -1,23 +1,9 @@
 # GeodeTestMod
-This is where she makes a mod.
 
-<img src="logo.png" width="150" alt="the mod's logo" />
+Mod for testing Geode features. This should not be published on the index! Ever! It's only for Geode developers!
 
-*Update logo.png to change your mod's icon (please)*
+## Tests
 
-## Getting started
-We recommend heading over to [the getting started section on our docs](https://docs.geode-sdk.org/getting-started/) for useful info on what to do next.
+ * All settings v3 related stuff
 
-## Build instructions
-For more info, see [our docs](https://docs.geode-sdk.org/getting-started/create-mod#build)
-```sh
-# Assuming you have the Geode CLI set up already
-geode build
-```
-
-# Resources
-* [Geode SDK Documentation](https://docs.geode-sdk.org/)
-* [Geode SDK Source Code](https://github.com/geode-sdk/geode/)
-* [Geode CLI](https://github.com/geode-sdk/cli)
-* [Bindings](https://github.com/geode-sdk/bindings/)
-* [Dev Tools](https://github.com/geode-sdk/DevTools)
+And that's currently it. Geode devs are free to contribute more tests, like all the UI nodes.
