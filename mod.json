@@ -1,5 +1,5 @@
 {
-	"geode": "3.4.0",
+	"geode": "3.5.0",
 	"gd": {
 		"win": "2.206",
 		"android": "2.206",
@@ -310,6 +310,15 @@
 			"default": "#000",
 			"name": "Longer ass name for color setting how does it cope"
 		},
+		"section-custom": {
+			"type": "title",
+			"name": "Custom Setting Tests"
+		},
+		"test-custom-setting": {
+			"type": "custom:my-awesome-type",
+			"default": "valid-enum-value",
+			"name": "My Awesome Enum!"
+		},
 		"section-enable-if": {
 			"type": "title",
 			"name": "Enable If Tests"
@@ -406,6 +415,11 @@
 		"test-should-be-enabled-rgba": {
 			"type": "rgba",
 			"default": "#0000",
+			"enable-if": "test-enable-if"
+		},
+		"test-should-be-enabled-custom": {
+			"type": "custom:my-awesome-type",
+			"default": "valid-enum-value",
 			"enable-if": "test-enable-if"
 		}
 	}
