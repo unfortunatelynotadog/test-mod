@@ -233,17 +233,21 @@
 		},
 		"test-path-open-file": {
 			"type": "file",
-			"dialog": "open",
 			"default": "{gd_dir}/GeometryDash.exe",
 			"name": "Test Open File",
-			"description": "this path should point to gd exe by default"
+			"description": "this path should point to gd exe by default",
+			"control": {
+				"dialog": "open"
+			}
 		},
 		"test-path-save-file": {
 			"type": "file",
-			"dialog": "save",
 			"default": "{gd_dir}/file.txt",
 			"name": "Test Save File",
-			"description": "this path should prompt the save file dialog"
+			"description": "this path should prompt the save file dialog",
+			"control": {
+				"dialog": "save"
+			}
 		},
 		"test-folder": {
 			"type": "folder",
