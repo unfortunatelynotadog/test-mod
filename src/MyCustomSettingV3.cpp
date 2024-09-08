@@ -49,15 +49,12 @@ struct geode::SettingTypeForValueType<MyCustomEnum> {
 
 class MyCustomSettingNodeV3 : public SettingValueNodeV3<MyCustomSettingV3> {
 protected:
-    MyCustomEnum m_value;
     std::vector<CCMenuItemToggler*> m_toggles;
 
     bool init(std::shared_ptr<MyCustomSettingV3> setting, float width) {
         if (!SettingValueNodeV3::init(setting, width))
             return false;
         
-        m_value = setting->getValue();
-
         for (auto value : {
             std::make_pair(MyCustomEnum::ValidEnumValue, "GJ_starsIcon_001.png"),
             std::make_pair(MyCustomEnum::OtherValidEnumValue, "currencyOrbIcon_001.png"),
@@ -85,7 +82,7 @@ protected:
         SettingValueNodeV3::updateState(invoker);
         auto shouldEnable = this->getSetting()->shouldEnable();
         for (auto toggle : m_toggles) {
-            toggle->toggle(toggle->getTag() == static_cast<int>(m_value));
+            toggle->toggle(toggle->getTag() == static_cast<int>(this->getValue()));
             toggle->setEnabled(shouldEnable);
             toggle->setCascadeColorEnabled(true);
             toggle->setCascadeOpacityEnabled(true);
@@ -95,9 +92,6 @@ protected:
     }
     void onToggle(CCObject* sender) {
         this->setValue(static_cast<MyCustomEnum>(sender->getTag()), static_cast<CCNode*>(sender));
-    }
-    void onSetValue(MyCustomEnum value) override {
-        m_value = value;
     }
 
 public:
@@ -109,10 +103,6 @@ public:
         }
         CC_SAFE_DELETE(ret);
         return nullptr;
-    }
-
-    MyCustomEnum getValue() const override {
-        return m_value;
     }
 };
 
